@@ -8,6 +8,12 @@ import { AboutComponent } from './pages/about/about.component';
 import { HomeComponent } from './pages/home/home.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { ProjectsComponent } from './pages/projects/projects.component';
+import { ButtonComponent } from './components/button/button.component';
+import { ContactBannerComponent } from './components/contact-banner/contact-banner.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { NavMenuComponent } from './components/nav-menu/nav-menu.component';
+import { SectionTitleComponent } from './components/section-title/section-title.component';
+import { PTextComponent } from './components/p-text/p-text.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +22,12 @@ import { ProjectsComponent } from './pages/projects/projects.component';
     HomeComponent,
     ContactComponent,
     ProjectsComponent,
+    ButtonComponent,
+    ContactBannerComponent,
+    FooterComponent,
+    NavMenuComponent,
+    SectionTitleComponent,
+    PTextComponent,
   ],
   imports: [BrowserModule, FormsModule, AppRoutingModule],
   providers: [],
