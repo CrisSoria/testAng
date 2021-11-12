@@ -1,1 +1,33 @@
-<p>footer works!</p>
+<div class="footer">
+  <div class="container">
+    <div class="footer__col1">
+      <h1 class="footer__col1__title">Cristian Soria</h1>
+      <app-p-text
+        text="Full Stack Developer de Salta, Argentina. Siempre dispuesto a
+      continuar aprendiendo. Con impulso constante en la búsqueda de
+      mejores soluciones para emprender."
+      ></app-p-text>
+    </div>
+    <div class="footer__col2">
+      <app-footer-col heading="Web Links" [links]="webLinks"></app-footer-col>
+    </div>
+    <div class="footer__col3">
+      <app-footer-col
+        heading="Contact Info"
+        [links]="contactInfo"
+      ></app-footer-col>
+    </div>
+    <div class="footer__col4">
+      <app-footer-col
+        heading="Social Links"
+        [links]="socialLinks"
+      ></app-footer-col>
+    </div>
+  </div>
+  <div class="copyright">
+    <div class="container">
+      <img class="logo" src="../../../assets/images/logo.svg" alt="logo" />
+      <app-p-text text="© 2021 - Designed By CrisSoria"></app-p-text>
+    </div>
+  </div>
+</div>

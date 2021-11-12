@@ -1,15 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-p-text',
   templateUrl: './p-text.component.html',
-  styleUrls: ['./p-text.component.css']
+  styleUrls: ['./p-text.component.css'],
 })
 export class PTextComponent implements OnInit {
+  @Input() text: string;
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

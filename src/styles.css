@@ -1,1 +1,62 @@
-/* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: RobotoMonoRegular;
+  src: url(./assets/fonts/RobotoMono-Regular.ttf) format("opentype");
+}
+@font-face {
+  font-family: MontserratSemiBold;
+  src: url(./assets/fonts/Montserrat-SemiBold.ttf) format("opentype");
+}
+@font-face {
+  font-family: MontserratBold;
+  src: url(./assets/fonts/Montserrat-Bold.ttf) format("opentype");
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "RobotoMonoRegular";
+  color: var(--gray-1);
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "MontserratSemiBold";
+}
+:root {
+  --dark-bg: #262626;
+  --gray-1: #bcb4b4;
+  --deep-dark: #1e1e1e;
+  --gray-2: #363636;
+  --white: white;
+  --black: black;
+  --cian: #8bffff;
+}
+html {
+  font-size: 10px;
+  font-family: "Roboto Mono";
+  background-color: var(--dark-bg);
+}
+ul,
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+img,
+svg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+button {
+  outline: none;
+}
+.container {
+  max-width: 1200px;
+  width: 90%;
+  margin: 0 auto;
+}
