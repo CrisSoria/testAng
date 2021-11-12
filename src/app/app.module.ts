@@ -15,6 +15,7 @@ import { NavMenuComponent } from './components/nav-menu/nav-menu.component';
 import { SectionTitleComponent } from './components/section-title/section-title.component';
 import { PTextComponent } from './components/p-text/p-text.component';
 import { FooterColComponent } from './components/footer/footer-col/footer-col.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,7 @@ import { FooterColComponent } from './components/footer/footer-col/footer-col.co
     PTextComponent,
     FooterColComponent,
   ],
-  imports: [BrowserModule, FormsModule, AppRoutingModule],
+  imports: [BrowserModule, FormsModule, AppRoutingModule, FontAwesomeModule],
   providers: [],
   bootstrap: [AppComponent],
 })

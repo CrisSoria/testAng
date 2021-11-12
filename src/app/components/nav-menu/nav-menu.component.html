@@ -1,1 +1,22 @@
-<p>nav-menu works!</p>
+<div class="nav-menu">
+  <div class="mobile-menu-icon" (click)="togleShowNav()">
+    <fa-icon [icon]="faBars" class="fa-3x"></fa-icon>
+  </div>
+  <ul [ngClass]="{ navItems: true, 'hide-item': showNav }">
+    <div class="closeNavIcon" (click)="togleShowNav()">
+      <fa-icon [icon]="faWindowClose" class="fa-3x"></fa-icon>
+    </div>
+    <li>
+      <a routerLink="/" (click)="togleShowNav()">Home</a>
+    </li>
+    <li>
+      <a routerLink="/about" (click)="togleShowNav()">About</a>
+    </li>
+    <li>
+      <a routerLink="/projects" (click)="togleShowNav()">Projects</a>
+    </li>
+    <li>
+      <a routerLink="/contact" (click)="togleShowNav()">Contact</a>
+    </li>
+  </ul>
+</div>
