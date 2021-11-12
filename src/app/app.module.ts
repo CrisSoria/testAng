@@ -16,6 +16,10 @@ import { SectionTitleComponent } from './components/section-title/section-title.
 import { PTextComponent } from './components/p-text/p-text.component';
 import { FooterColComponent } from './components/footer/footer-col/footer-col.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { HeroSectionComponent } from './pages/home/hero-section/hero-section.component';
+import { AboutSectionComponent } from './pages/home/about-section/about-section.component';
+import { ServicesSectionComponent } from './pages/home/services-section/services-section.component';
+import { ProjectsSectionComponent } from './pages/home/projects-section/projects-section.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +35,10 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     SectionTitleComponent,
     PTextComponent,
     FooterColComponent,
+    HeroSectionComponent,
+    AboutSectionComponent,
+    ServicesSectionComponent,
+    ProjectsSectionComponent,
   ],
   imports: [BrowserModule, FormsModule, AppRoutingModule, FontAwesomeModule],
   providers: [],
