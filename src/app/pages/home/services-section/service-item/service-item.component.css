@@ -1,0 +1,11 @@
+.servicesItem {
+  text-align: center;
+}
+.servicesItem__icon {
+  /* width: 3rem; */
+}
+.servicesItem__title {
+  font-size: 2.5rem;
+  font-family: "MontserratSemiBold";
+  margin-bottom: 2rem;
+}

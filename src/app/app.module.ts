@@ -20,6 +20,7 @@ import { HeroSectionComponent } from './pages/home/hero-section/hero-section.com
 import { AboutSectionComponent } from './pages/home/about-section/about-section.component';
 import { ServicesSectionComponent } from './pages/home/services-section/services-section.component';
 import { ProjectsSectionComponent } from './pages/home/projects-section/projects-section.component';
+import { ServiceItemComponent } from './pages/home/services-section/service-item/service-item.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { ProjectsSectionComponent } from './pages/home/projects-section/projects
     AboutSectionComponent,
     ServicesSectionComponent,
     ProjectsSectionComponent,
+    ServiceItemComponent,
   ],
   imports: [BrowserModule, FormsModule, AppRoutingModule, FontAwesomeModule],
   providers: [],
