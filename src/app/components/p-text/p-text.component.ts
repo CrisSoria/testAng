@@ -7,6 +7,8 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class PTextComponent implements OnInit {
   @Input() text: string;
+  @Input() left: boolean = false;
+  @Input() white: boolean = false;
 
   constructor() {}
 

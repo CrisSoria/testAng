@@ -32,6 +32,11 @@
 .hero__info {
   margin-top: -18rem;
 }
+.hero__info app-p-text .para {
+  margin: 0 auto;
+  text-align: center;
+  border: 2px solid var(--gray-1);
+}
 .hero__social,
 .hero__scrollDown {
   display: flex;

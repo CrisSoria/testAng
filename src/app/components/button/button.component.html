@@ -1,5 +1,9 @@
 <div class="button-cnt">
-  <a class="button" routerLink="{{ link }}"
+  <a
+    class="button"
+    routerLink="{{ link }}"
+    [class.full]="full"
+    [class.outline]="outline"
     ><span>{{ text }}</span></a
   >
 </div>

@@ -49,3 +49,14 @@
     font-size: 1.8rem;
   }
 }
+
+/* clases dinamicas */
+.full {
+  width: 100%;
+}
+.outline {
+  background-color: transparent;
+}
+.outline span {
+  color: var(--gray-1);
+}

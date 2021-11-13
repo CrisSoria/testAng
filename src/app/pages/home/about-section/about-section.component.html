@@ -1,1 +1,45 @@
-<p>about-section works!</p>
+<div class="sectionCnt">
+  <div class="container">
+    <div class="aboutSection__left">
+      <app-section-title
+        subheading="Full Stack Developer"
+        heading="Sobre mí"
+      ></app-section-title>
+
+      <app-p-text
+        [left]="true"
+        text="Siempre dispuesto a continuar aprendiendo. Con impulso constante en
+      la búsqueda de mejores soluciones para emprenderlas."
+      >
+      </app-p-text>
+      <app-p-text
+        [left]="true"
+        text="Me apasiona desarrollar aplicaciones que resuelvan problemáticas y
+        satisfagan necesidades."
+      >
+      </app-p-text>
+
+      <div class="aboutSection__buttons">
+        <app-button [full]="true" text="Trabajos" link="/projects"></app-button>
+        <app-button
+          [full]="true"
+          [outline]="true"
+          text="Ver más"
+          link="/about"
+        ></app-button>
+      </div>
+    </div>
+    <div class="aboutSection__right">
+      <img
+        src="../../../../assets/images/aboutHome.png"
+        alt="img1"
+        class="aboutImgMax"
+      />
+      <img
+        src="../../../../assets/images/aboutMin.png"
+        alt="img2"
+        class="aboutImgMin"
+      />
+    </div>
+  </div>
+</div>
