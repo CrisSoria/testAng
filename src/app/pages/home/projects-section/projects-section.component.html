@@ -1,1 +1,24 @@
-<p>projects-section works!</p>
+<div class="cntProyectsSection">
+  <div class="container">
+    <app-section-title
+      subheading="Trabajos más representativos"
+      heading="Proyectos"
+    ></app-section-title>
+    <div class="projects__allItems">
+      <swiper [config]="config">
+        <ng-template
+          swiperSlide
+          *ngFor="let project of projects; let i = index"
+        >
+          <app-project-item
+            [title]="project.name"
+            [img]="project.img"
+            [desc]="project.desc"
+            [web]="project.web"
+            [github]="project.github"
+          ></app-project-item>
+        </ng-template>
+      </swiper>
+    </div>
+  </div>
+</div>

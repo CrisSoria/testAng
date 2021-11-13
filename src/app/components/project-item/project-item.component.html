@@ -1,0 +1,22 @@
+<div class="projectItem">
+  <a routerLink="/projects" class="projectItem__img">
+    <img src="{{ img }}" alt="project img" />
+  </a>
+  <div class="projectItem__info">
+    <a to="#">
+      <h3 class="projectItem__title">{{ title }}</h3>
+    </a>
+    <p class="projectItem__desc">{{ desc }}</p>
+    <a href="{{ web }}" target="_blank" rel="noreferrer" class="web boton">
+      <span>Web</span>
+    </a>
+    <a
+      href="{{ github }}"
+      target="_blank"
+      rel="noreferrer"
+      class="github boton"
+    >
+      <span>GitHub</span>
+    </a>
+  </div>
+</div>

@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing/app-routing.module';
+import { SwiperModule } from 'swiper/angular';
 
 import { AppComponent } from './app.component';
 import { AboutComponent } from './pages/about/about.component';
@@ -21,6 +22,8 @@ import { AboutSectionComponent } from './pages/home/about-section/about-section.
 import { ServicesSectionComponent } from './pages/home/services-section/services-section.component';
 import { ProjectsSectionComponent } from './pages/home/projects-section/projects-section.component';
 import { ServiceItemComponent } from './pages/home/services-section/service-item/service-item.component';
+import { ProjectItemComponent } from './components/project-item/project-item.component';
+import { ProjectsService } from './services/projects.service';
 
 @NgModule({
   declarations: [
@@ -41,9 +44,16 @@ import { ServiceItemComponent } from './pages/home/services-section/service-item
     ServicesSectionComponent,
     ProjectsSectionComponent,
     ServiceItemComponent,
+    ProjectItemComponent,
   ],
-  imports: [BrowserModule, FormsModule, AppRoutingModule, FontAwesomeModule],
-  providers: [],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    AppRoutingModule,
+    FontAwesomeModule,
+    SwiperModule,
+  ],
+  providers: [ProjectsService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
