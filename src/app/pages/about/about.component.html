@@ -1,1 +1,36 @@
-<p>about works!</p>
+<div class="aboutContainer">
+  <div class="container">
+    <div class="top-section">
+      <div class="left">
+        <p class="about__subheading">Hola, soy <span>Cris</span></p>
+        <h2 class="about__heading">Full Stack Developer</h2>
+        <div class="about__info">
+          <app-p-text
+            [left]="true"
+            [aboutPage]="true"
+            *ngFor="let p of paragraphs"
+            [text]="p"
+          ></app-p-text>
+        </div>
+        <app-button
+          text="Descargar CV"
+          link="../../../assets/Cristian_Soria_CV.pdf"
+          [download]="true"
+        ></app-button>
+      </div>
+      <div class="right">
+        <img src="../../../assets/images/about-page-img2.png" alt="me" />
+      </div>
+    </div>
+    <div class="about__info__items">
+      <div class="about__info__item">
+        <h1 class="about__info__heading">My Skills</h1>
+
+        <app-skills-info title="FrontEnd" [items]="front"> </app-skills-info>
+        <app-skills-info title="BackEnd" [items]="back"> </app-skills-info>
+        <app-skills-info title="General" [items]="general"> </app-skills-info>
+      </div>
+    </div>
+  </div>
+  <app-contact-banner></app-contact-banner>
+</div>
