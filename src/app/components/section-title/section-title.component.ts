@@ -8,6 +8,7 @@ import { Component, Input, OnInit } from '@angular/core';
 export class SectionTitleComponent implements OnInit {
   @Input() subheading = 'Need Subheading';
   @Input() heading = 'need heading';
+  @Input() left: boolean = false;
   constructor() {}
 
   ngOnInit(): void {}

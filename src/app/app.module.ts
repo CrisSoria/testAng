@@ -23,7 +23,13 @@ import { ServicesSectionComponent } from './pages/home/services-section/services
 import { ProjectsSectionComponent } from './pages/home/projects-section/projects-section.component';
 import { ServiceItemComponent } from './pages/home/services-section/service-item/service-item.component';
 import { ProjectItemComponent } from './components/project-item/project-item.component';
+import { ContactSectionComponent } from './pages/contact/contact-section/contact-section.component';
+import { MapComponent } from './pages/contact/map/map.component';
+import { ContactFormComponent } from './pages/contact/contact-section/contact-form/contact-form.component';
+import { ContactInfoItemComponent } from './pages/contact/contact-section/contact-info-item/contact-info-item.component';
+
 import { ProjectsService } from './services/projects.service';
+import { EmailService } from './services/email.service';
 
 @NgModule({
   declarations: [
@@ -45,6 +51,10 @@ import { ProjectsService } from './services/projects.service';
     ProjectsSectionComponent,
     ServiceItemComponent,
     ProjectItemComponent,
+    ContactSectionComponent,
+    MapComponent,
+    ContactFormComponent,
+    ContactInfoItemComponent,
   ],
   imports: [
     BrowserModule,
@@ -53,7 +63,7 @@ import { ProjectsService } from './services/projects.service';
     FontAwesomeModule,
     SwiperModule,
   ],
-  providers: [ProjectsService],
+  providers: [ProjectsService, EmailService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
