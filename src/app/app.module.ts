@@ -30,6 +30,7 @@ import { ContactInfoItemComponent } from './pages/contact/contact-section/contac
 
 import { ProjectsService } from './services/projects.service';
 import { EmailService } from './services/email.service';
+import { SkillsInfoComponent } from './pages/about/skills-info/skills-info.component';
 
 @NgModule({
   declarations: [
@@ -55,6 +56,7 @@ import { EmailService } from './services/email.service';
     MapComponent,
     ContactFormComponent,
     ContactInfoItemComponent,
+    SkillsInfoComponent,
   ],
   imports: [
     BrowserModule,

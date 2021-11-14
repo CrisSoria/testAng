@@ -4,6 +4,7 @@
   font-size: 1.8rem;
   line-height: 1.3em;
   /* margin-top: 2rem; */
+  /* padding-bottom: 1rem; */
 }
 
 @media only screen and (max-width: 768px) {
@@ -23,4 +24,8 @@
 }
 .left {
   margin: 0;
+}
+.aboutPage {
+  min-width: 50vw;
+  padding-bottom: 1.5rem;
 }

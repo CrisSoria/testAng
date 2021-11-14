@@ -1,9 +1,21 @@
-<div class="button-cnt">
+<div class="button-cnt" *ngIf="download; else boton">
   <a
+    target="_blank"
     class="button"
-    routerLink="{{ link }}"
+    href="{{ link }}"
     [class.full]="full"
     [class.outline]="outline"
     ><span>{{ text }}</span></a
   >
 </div>
+<ng-template #boton>
+  <div class="button-cnt">
+    <a
+      class="button"
+      routerLink="{{ link }}"
+      [class.full]="full"
+      [class.outline]="outline"
+      ><span>{{ text }}</span></a
+    >
+  </div>
+</ng-template>

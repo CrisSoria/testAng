@@ -10,6 +10,7 @@ export class ButtonComponent implements OnInit {
   @Input() link: string;
   @Input() outline: boolean = false;
   @Input() full: boolean = false;
+  @Input() download: boolean = false;
 
   constructor() {}
 

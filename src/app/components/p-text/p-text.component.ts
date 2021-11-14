@@ -9,6 +9,7 @@ export class PTextComponent implements OnInit {
   @Input() text: string;
   @Input() left: boolean = false;
   @Input() white: boolean = false;
+  @Input() aboutPage: boolean = false;
 
   constructor() {}
 
