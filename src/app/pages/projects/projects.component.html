@@ -1,1 +1,31 @@
-<p>projects works!</p>
+<div class="projectsPage">
+  <div class="container">
+    <app-section-title
+      heading="Projects"
+      subheading="algunos de mis trabajos recientes"
+    ></app-section-title>
+    <div class="projects__searchBar">
+      <form>
+        <input
+          type="text"
+          placeholder="Project Name"
+          name="search"
+          [(ngModel)]="searchInput"
+          (ngModelChange)="searchProject($event)"
+        />
+
+        <fa-icon [icon]="icon" class="fa-2x searchIcon"></fa-icon>
+      </form>
+    </div>
+    <div class="projects__allItems">
+      <app-project-item
+        *ngFor="let project of projectsShow"
+        [title]="project.name"
+        [desc]="project.desc"
+        [img]="project.img"
+        [web]="project.web"
+        [github]="project.github"
+      ></app-project-item>
+    </div>
+  </div>
+</div>
