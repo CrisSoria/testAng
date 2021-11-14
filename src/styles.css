@@ -43,6 +43,9 @@ html {
   font-size: 10px;
   font-family: "Roboto Mono";
   background-color: var(--dark-bg);
+  /* cada vez que aparece y desaparece la barra de navegacion me mueve todo el contenido hacia el costado, por lo que voy a dejarle siempre espacio */
+  overflow-x: hidden;
+  margin-right: calc(-1 * (100vw - 100%));
 }
 ul,
 li {
@@ -70,13 +73,9 @@ body::-webkit-scrollbar {
   height: 100vh;
   overflow: hidden;
   background-color: var(--dark-bg);
-  position: absolute;
-  left: 2px;
-  /* display: none; */
-  /* min-width: 0.3rem; */
-  width: 0.6rem;
+  width: 0.8rem;
 }
 body::-webkit-scrollbar-thumb {
   background-color: var(--gray-1);
-  border-radius: 5px;
+  border-radius: 4px;
 }
