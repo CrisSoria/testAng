@@ -17,4 +17,9 @@ export class HeroSectionComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
+  scrollDown() {
+    document
+      .getElementById('homeAboutSection')
+      ?.scrollIntoView({ behavior: 'smooth' });
+  }
 }

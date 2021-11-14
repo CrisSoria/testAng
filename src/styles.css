@@ -1,4 +1,8 @@
 @import "~swiper/swiper-bundle";
+main {
+  /* text-align: center; */
+  position: relative;
+}
 @font-face {
   font-family: RobotoMonoRegular;
   src: url(./assets/fonts/RobotoMono-Regular.ttf) format("opentype");
@@ -60,4 +64,19 @@ button {
   max-width: 1200px;
   width: 90%;
   margin: 0 auto;
+}
+
+body::-webkit-scrollbar {
+  height: 100vh;
+  overflow: hidden;
+  background-color: var(--dark-bg);
+  position: absolute;
+  left: 2px;
+  /* display: none; */
+  /* min-width: 0.3rem; */
+  width: 0.6rem;
+}
+body::-webkit-scrollbar-thumb {
+  background-color: var(--gray-1);
+  border-radius: 5px;
 }
