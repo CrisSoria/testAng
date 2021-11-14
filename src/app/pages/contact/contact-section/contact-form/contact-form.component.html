@@ -1,0 +1,44 @@
+<form
+  class="form-wrapper"
+  #f="ngForm"
+  (ngSubmit)="f.form.valid && onSubmit($event)"
+>
+  <div class="form-group">
+    <label htmlFor="name">
+      Tu Nombre
+      <input
+        type="text"
+        id="name"
+        name="name"
+        [(ngModel)]="nameInput"
+        required
+      />
+    </label>
+  </div>
+  <div class="form-group">
+    <label htmlFor="email">
+      Tu Email
+      <input
+        type="email"
+        id="email"
+        name="email"
+        [(ngModel)]="emailInput"
+        required
+      />
+    </label>
+  </div>
+  <div class="form-group">
+    <label htmlFor="message">
+      Tu mensaje
+      <textarea
+        type="text"
+        id="message"
+        name="message"
+        [(ngModel)]="messageInput"
+      ></textarea>
+    </label>
+  </div>
+  <button type="submit" class="boton">
+    <span>Enviar</span>
+  </button>
+</form>
