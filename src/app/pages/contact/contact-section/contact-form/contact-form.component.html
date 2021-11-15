@@ -1,44 +1,77 @@
 <form
   class="form-wrapper"
-  #f="ngForm"
-  (ngSubmit)="f.form.valid && onSubmit($event)"
+  [formGroup]="contactForm"
+  (ngSubmit)="onSubmit($event)"
 >
   <div class="form-group">
     <label htmlFor="name">
       Tu Nombre
+
+      <span
+        class="errContainer"
+        *ngIf="name?.invalid && (name?.dirty || name?.touched)"
+      >
+        <span *ngIf="name?.errors?.['required']" class="alertErr"
+          >Ingresa un nombre</span
+        >
+        <span *ngIf="name?.errors?.['minlength']" class="alertErr"
+          >Ingresa al menos 3 caracteres</span
+        >
+        <span *ngIf="name?.errors?.['maxlength']" class="alertErr"
+          >Superaste el límite de caracteres</span
+        >
+      </span>
+
       <input
         type="text"
         id="name"
         name="name"
-        [(ngModel)]="nameInput"
-        required
+        formControlName="name"
+        [class.inputError]="name?.invalid && (name?.dirty || name?.touched)"
       />
     </label>
   </div>
   <div class="form-group">
     <label htmlFor="email">
       Tu Email
+
+      <span
+        *ngIf="email?.invalid && (email?.dirty || email?.touched)"
+        class="alertErr"
+        >{{ errorHandler("email") }}</span
+      >
+
       <input
         type="email"
         id="email"
         name="email"
-        [(ngModel)]="emailInput"
-        required
+        formControlName="email"
+        [class.inputError]="email?.invalid && (email?.dirty || email?.touched)"
       />
     </label>
   </div>
   <div class="form-group">
     <label htmlFor="message">
       Tu mensaje
+
+      <span
+        *ngIf="message?.invalid && (message?.dirty || message?.touched)"
+        class="alertErr"
+        >{{ errorHandler("message") }}</span
+      >
+
       <textarea
         type="text"
         id="message"
         name="message"
-        [(ngModel)]="messageInput"
+        formControlName="message"
+        [class.inputError]="
+          message?.invalid && (message?.dirty || message?.touched)
+        "
       ></textarea>
     </label>
   </div>
   <button type="submit" class="boton">
-    <span>Enviar</span>
-  </button>
+    <span>Enviar</span></button
+  ><span class="submitMessage">{{ sendEmailStatus }}</span>
 </form>
