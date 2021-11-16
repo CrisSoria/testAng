@@ -14,7 +14,7 @@ export class NavMenuComponent implements OnInit {
   // voy a observar si se clickea fuera del elemento
   //https://qastack.mx/programming/40107008/detect-click-outside-angular-component
   @HostListener('document:click', ['$event'])
-  clickout(event: any) {
+  clickout(event: Event): void {
     let clickInside = !!this.eRef.nativeElement.contains(event.target);
     if (!clickInside && this.showNav === false) {
       this.showNav = !this.showNav;

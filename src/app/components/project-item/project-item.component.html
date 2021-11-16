@@ -7,10 +7,17 @@
       <h3 class="projectItem__title">{{ title }}</h3>
     </a>
     <p class="projectItem__desc">{{ desc }}</p>
-    <a href="{{ web }}" target="_blank" rel="noreferrer" class="web boton">
+    <a
+      *ngIf="web && web !== ''"
+      href="{{ web }}"
+      target="_blank"
+      rel="noreferrer"
+      class="web boton"
+    >
       <span>Web</span>
     </a>
     <a
+      *ngIf="github && web !== ''"
       href="{{ github }}"
       target="_blank"
       rel="noreferrer"

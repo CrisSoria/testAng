@@ -132,3 +132,7 @@
     font-size: 1.3rem;
   }
 }
+.hero__scrollDown:hover {
+  cursor: pointer;
+  color: var(--cian);
+}

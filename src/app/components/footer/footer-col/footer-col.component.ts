@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { iFooterInfo } from 'src/app/interfaces';
 
 @Component({
   selector: 'app-footer-col',
@@ -7,7 +8,8 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class FooterColComponent implements OnInit {
   @Input() heading: string = 'Col Heading';
-  @Input() links: any;
+  @Input() links: iFooterInfo[];
+  @Input() typeRouterLink: boolean = false;
   constructor() {}
 
   ngOnInit(): void {}

@@ -1,8 +1,15 @@
 import { Injectable } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { BehaviorSubject, Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
-@Injectable()
+import { iProject } from '../interfaces';
+
+@Injectable({
+  providedIn: 'root',
+})
 export class ProjectsService {
-  projects = [
+  private projects$ = new BehaviorSubject<iProject[]>([
     {
       id: 1,
       name: 'Compu Henry',
@@ -51,7 +58,23 @@ export class ProjectsService {
       github: 'https://github.com/CrisSoria/React_Video_Chat_App',
       web: 'https://video-chat-cris.netlify.app',
     },
-  ];
+  ]);
+  private path: string = environment.JSONBIN_URL;
+  private key: string = '$2b$10$' + environment.JSONBIN_KEY;
 
-  constructor() {}
+  constructor(private http: HttpClient) {}
+
+  fetchProjects() {
+    const headers = new HttpHeaders({
+      'secret-key': this.key,
+    });
+    this.http.get<iProject[]>(this.path, { headers }).subscribe((data) => {
+      this.projects$.next(data);
+    });
+  }
+
+  getProjects(): Observable<iProject[]> {
+    this.fetchProjects();
+    return this.projects$.asObservable();
+  }
 }

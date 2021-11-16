@@ -2,10 +2,7 @@
   <h2 class="heading">{{ heading }}</h2>
   <ul *ngFor="let link of links">
     <li>
-      <a
-        *ngIf="link.type === 'Link'; else outLink"
-        routerLink="{{ link.path }}"
-      >
+      <a *ngIf="typeRouterLink; else outLink" routerLink="{{ link.path }}">
         {{ link.title }}
       </a>
       <ng-template #outLink

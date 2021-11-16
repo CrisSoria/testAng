@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { SwiperModule } from 'swiper/angular';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -28,10 +29,10 @@ import { ContactSectionComponent } from './pages/contact/contact-section/contact
 import { MapComponent } from './pages/contact/map/map.component';
 import { ContactFormComponent } from './pages/contact/contact-section/contact-form/contact-form.component';
 import { ContactInfoItemComponent } from './pages/contact/contact-section/contact-info-item/contact-info-item.component';
+import { SkillsInfoComponent } from './pages/about/skills-info/skills-info.component';
 
 import { ProjectsService } from './services/projects.service';
 import { EmailService } from './services/email.service';
-import { SkillsInfoComponent } from './pages/about/skills-info/skills-info.component';
 
 @NgModule({
   declarations: [
@@ -64,6 +65,7 @@ import { SkillsInfoComponent } from './pages/about/skills-info/skills-info.compo
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule,
     AppRoutingModule,
     FontAwesomeModule,
     SwiperModule,

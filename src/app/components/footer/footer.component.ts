@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { iFooterInfo } from 'src/app/interfaces';
 
 @Component({
   selector: 'app-footer',
@@ -6,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./footer.component.css'],
 })
 export class FooterComponent implements OnInit {
-  contactInfo: any = [
+  contactInfo: iFooterInfo[] = [
     {
       title: '+543876004180',
       path: 'tel:+543876004180',
@@ -20,29 +21,25 @@ export class FooterComponent implements OnInit {
       path: 'http://google.com/maps',
     },
   ];
-  webLinks: any = [
+  webLinks: iFooterInfo[] = [
     {
       title: 'Home',
       path: '/',
-      type: 'Link',
     },
     {
-      type: 'Link',
       title: 'About',
       path: '/about',
     },
     {
-      type: 'Link',
       title: 'Projects',
       path: '/projects',
     },
     {
-      type: 'Link',
       title: 'Contact',
       path: '/contact',
     },
   ];
-  socialLinks: any = [
+  socialLinks: iFooterInfo[] = [
     {
       title: 'LinkedIn',
       path: 'https://www.linkedin.com/in/crissoria/',

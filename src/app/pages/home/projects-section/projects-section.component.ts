@@ -3,6 +3,7 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import SwiperCore, { SwiperOptions, Pagination, Navigation } from 'swiper';
 
 import { ProjectsService } from 'src/app/services/projects.service';
+import { iProject } from 'src/app/interfaces';
 
 @Component({
   selector: 'app-projects-section',
@@ -31,11 +32,14 @@ export class ProjectsSectionComponent implements OnInit {
       },
     },
   };
-  projects: any = [];
+  projects: iProject[] = [];
+
   constructor(private projectsService: ProjectsService) {}
 
   ngOnInit(): void {
     SwiperCore.use([Pagination, Navigation]);
-    this.projects = this.projectsService.projects;
+    this.projectsService
+      .getProjects()
+      .subscribe((fetchProjects) => (this.projects = fetchProjects));
   }
 }

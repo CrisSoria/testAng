@@ -8,19 +8,10 @@
       Tu Nombre
 
       <span
-        class="errContainer"
         *ngIf="name?.invalid && (name?.dirty || name?.touched)"
+        class="alertErr"
+        >{{ errorHandler("name") }}</span
       >
-        <span *ngIf="name?.errors?.['required']" class="alertErr"
-          >Ingresa un nombre</span
-        >
-        <span *ngIf="name?.errors?.['minlength']" class="alertErr"
-          >Ingresa al menos 3 caracteres</span
-        >
-        <span *ngIf="name?.errors?.['maxlength']" class="alertErr"
-          >Superaste el límite de caracteres</span
-        >
-      </span>
 
       <input
         type="text"
@@ -71,7 +62,20 @@
       ></textarea>
     </label>
   </div>
-  <button type="submit" class="boton">
-    <span>Enviar</span></button
-  ><span class="submitMessage">{{ sendEmailStatus }}</span>
+  <button
+    type="submit"
+    class="boton"
+    [ngClass]="{ invalidBoton: !contactForm.valid }"
+  >
+    <span>Enviar</span>
+  </button>
+  <span *ngIf="sendEmailStatus === 'success'" class="submitOkMessage">
+    ¡Gracias por contactarme!
+  </span>
+  <span *ngIf="sendEmailStatus === 'fail'" class="submitErrorMessage">
+    Error por favor elije otro medio de contacto
+  </span>
+  <span *ngIf="sendEmailStatus === 'processing'" class="submitProcessMessage">
+    procesando ...
+  </span>
 </form>

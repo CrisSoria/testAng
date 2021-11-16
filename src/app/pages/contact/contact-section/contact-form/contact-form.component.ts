@@ -30,13 +30,18 @@ export class ContactFormComponent implements OnInit {
     });
   }
   contactForm: FormGroup;
-  sendEmailStatus: string = '';
+
+  sendEmailStatus: string;
 
   constructor(private emailService: EmailService) {
     this.contactForm = this.createFormGroup();
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.emailService
+      .getStatus()
+      .subscribe((status) => (this.sendEmailStatus = status));
+  }
 
   onResetForm() {
     this.contactForm.reset();
@@ -44,6 +49,11 @@ export class ContactFormComponent implements OnInit {
 
   errorHandler(type: string): string {
     let errorMessage = 'Input inválido';
+    if (type === 'name') {
+      if (this.name?.hasError('required')) errorMessage = 'Ingresa un nombre';
+      if (this.name?.hasError('minlength'))
+        errorMessage = 'Ingresa al menos 3 caracteres';
+    }
     if (type === 'email') {
       if (this.email?.hasError('required')) errorMessage = 'Ingresa un email';
       if (this.email?.hasError('pattern')) errorMessage = 'Email inválido';
@@ -61,20 +71,12 @@ export class ContactFormComponent implements OnInit {
   }
 
   onSubmit(e: Event): void {
-    /*  const data = {
-      name: this.contactForm.value.name,
-      emailAddress: this.contactForm.value.email,
-      message: this.contactForm.value.message,
-    };
-    console.log(data); */
     if (this.contactForm.valid) {
-      // this.emailService.sendEmail(e);
+      //pongo spinner
+      this.emailService.sendEmail(e);
       this.onResetForm();
-      this.sendEmailStatus = '¡Gracias por contactarme!';
     } else {
-      // console.log('not valid');
       this.contactForm.markAllAsTouched();
-      this.sendEmailStatus = 'existen Inputs inválidos';
     }
   }
 
